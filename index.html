@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Library</title>
     <link rel="stylesheet" href="style.css" /></head>
     <script src="library.js" defer></script>
     <!-- Embed for Roboto font -->
@@ -16,24 +16,44 @@
 <body>
 
     <div class="header">
-        <p>Library of Books</p>
+        <p>Library</p>
     </div>
     <div class="booksContainer">
         <div class="listOfBooks">
+            <h3>Select a book to see the image and details<br><br></h3>
             <ul id="bookList"></ul>
         </div>
         <div class="bookDetails">
             <div class="images">
-                <img src="images/The-Hobbit.jpg">
+                <img src="images/No Image Available.jpeg" id="bookPicture">
+                <!-- <img src="images/Empire.jpg"> -->
                 <!-- <img src="images/Lord Of The Flies.jpg">                  -->
                 <!-- <img src="images/No Image Available.jpeg"> -->
             </div>
             <div class="bookInfo">
-                <p>Author: J.R.R. Tolkien</p>
-                <p>Pages: 295</p>
-                <p>Read</p>
+                <table id="selectedBookDetails">
+                <tr>
+                    <th scope="row">Author:</th>
+                    <td class="authorName"></td>
+                </tr>
+
+                <tr class="borderRow">
+                    <th scope="row">Pages:</th>
+                    <td class="padding"></td>
+                </tr>
+
+                <tr class="borderRow">
+                    <th scope="row">Read?</th>
+                    <td class="padding"></td>
+                </tr>
+                </table>
+                <div>
+                    <button>Add A Book</button>
+                    <button>Delete This Book</button>
+                </div>
             </div>
         </div>
+
     </div>
 
 </body>
