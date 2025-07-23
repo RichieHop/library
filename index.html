@@ -14,6 +14,8 @@
 </head>
 
 <body>
+    
+    <!-- <img src="images/library.jpg" id="bookPicture"> -->
 
     <div class="header">
         <p>Library</p>
@@ -22,6 +24,8 @@
         <div class="listOfBooks">
             <h3>Select a book to see the image and details<br><br></h3>
             <ul id="bookList"></ul>
+            <p><br></p>
+            <p id="booksCount">Total books:</p>
         </div>
         <div class="bookDetails">
             <div class="images">
@@ -47,9 +51,10 @@
                     <td class="padding"></td>
                 </tr>
                 </table>
-                <div>
-                    <button>Add A Book</button>
-                    <button>Delete This Book</button>
+                <div class="buttons">
+                    <button id="add">Add A Book</button>
+                    <button id="delete">Delete This Book</button>
+                    <button id="toggleRead"> Toggle Read</button>
                 </div>
             </div>
         </div>

@@ -17,9 +17,18 @@ html{
 }
 
 body{
-  height: 100vh;
-  background-color: rgb(224, 224, 224);
+    height: 100vh;
+    background-color: rgb(224, 224, 224);
+    /* background-image: url(images/library.jpg);
+    background-size:100%; */
+    
+    /* Photo by <a href="https://unsplash.com/@emilwidlund?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Emil Widlund</a> on <a href="https://unsplash.com/photos/photo-of-brown-wooden-bookshelf-xrbbXIXAWY0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> */
 }
+
+/* .body img{
+    max-width: 50%;
+    max-height: auto;
+} */
 
 .header {
     display: flex;
@@ -55,10 +64,14 @@ body{
     display: flex;
     align-items: flex-start;
     height: 41.5rem;
-    width: 70rem;
+    width: 80rem;
     margin-left: 5rem;
     margin-top: 3rem;
     padding-left: 0.5rem;
+}
+
+#booksCount{
+    font-weight:  600;
 }
 
 .images {
@@ -108,9 +121,19 @@ td {
     padding-top: 0.5rem;
 }
 
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
 button{
     font-size: 1.5rem;
     border-radius: 0.5rem;
     padding: 0.5rem;
     margin-top: 1rem;
+}
+
+.buttons button:hover{
+    background-color: gray;
+    color: white;
 }
