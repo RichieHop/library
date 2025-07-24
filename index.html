@@ -23,13 +23,12 @@
     <div class="booksContainer">
         <div class="listOfBooks">
             <h3>Select a book to see the image and details<br><br></h3>
-            <ul id="bookList"></ul>
-            <p><br></p>
             <p id="booksCount">Total books:</p>
+            <ul id="bookList"></ul>
         </div>
         <div class="bookDetails">
             <div class="images">
-                <img src="images/No Image Available.jpeg" id="bookPicture">
+                <img src="images/No Image Available.png" id="bookPicture">
                 <!-- <img src="images/Empire.jpg"> -->
                 <!-- <img src="images/Lord Of The Flies.jpg">                  -->
                 <!-- <img src="images/No Image Available.jpeg"> -->
@@ -48,11 +47,12 @@
 
                 <tr class="borderRow">
                     <th scope="row">Read?</th>
-                    <td class="padding"></td>
+                    <td id="readCell" class="padding"></td>
                 </tr>
                 </table>
                 <div class="buttons">
                     <button id="add">Add A Book</button>
+                    <button id="edit">Edit This Book</button>
                     <button id="delete">Delete This Book</button>
                     <button id="toggleRead"> Toggle Read</button>
                 </div>
@@ -60,6 +60,85 @@
         </div>
 
     </div>
+
+<dialog id="addNewBook">
+    <form id="addBook" method="dialog">
+        <h1>Add A Book</h1>
+        <p>Required fields are followed by <strong><span aria-label="required">*</span></strong></p>
+        <div>
+            <label for="title">
+                <span>Title </span>
+                <strong><span aria-label="required">*</span></strong>
+            </label>
+            <input type="text" id="title" name="title" required />
+        </div>
+        <div>
+            <label for="author">
+                <span>Author </span>
+                <strong><span aria-label="required">*</span></strong>
+            </label>
+            <input type="text" id="author" name="author" required />
+        </div>
+        <div>
+            <label for="pages">
+                <span>Pages </span>
+            </label>
+            <input type="number" id="pages" name="pages" />
+        </div>
+        <div>
+            <label for="readOrNot">
+                <span>Read? </span>
+            </label>
+            <select id="readOrNot" name="readOrNot">
+                <option value="True">Yes</option>
+                <option value="False" selected>No</option>
+            </select>
+        </div>
+        <div>
+            <label for="imageURL">
+                <span>Image URL </span>
+            </label>
+            <input type="text" id="imageURL" name="imageURL" />
+        </div>
+        <input type="submit" id="normal-close" value="Add" />
+        <input type="submit" id="js-close" value="Cancel" />
+    </form>
+</dialog>
+
+<dialog id="editThisBook">
+    <form id="editBook" method="dialog">
+        <h1>Edit Book</h1>
+        <p>Required fields are followed by <strong><span aria-label="required">*</span></strong></p>
+        <div>
+            <label for="titleEdit">
+                <span>Title </span>
+                <strong><span aria-label="required">*</span></strong>
+            </label>
+            <input type="text" id="titleEdit" name="titleEdit" required />
+        </div>
+        <div>
+            <label for="authorEdit">
+                <span>Author </span>
+                <strong><span aria-label="required">*</span></strong>
+            </label>
+            <input type="text" id="authorEdit" name="authorEdit" required />
+        </div>
+        <div>
+            <label for="pagesEdit">
+                <span>Pages </span>
+            </label>
+            <input type="number" id="pagesEdit" name="pagesEdit" />
+        </div>
+        <div>
+            <label for="imageURLEdit">
+                <span>Image URL </span>
+            </label>
+            <input type="text" id="imageURLEdit" name="imageURLEdit" />
+        </div>
+        <input type="submit" id="normal-close-edit" value="Edit" />
+        <input type="submit" id="js-close-edit" value="Cancel" />
+    </form>
+</dialog>
 
 </body>
 

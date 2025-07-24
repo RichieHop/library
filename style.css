@@ -12,23 +12,14 @@ html{
     margin: 0;
     padding: 0;
     font-family: Roboto, sans-serif;
-    /* outline: 2px solid red; */
     box-sizing: border-box;
 }
 
 body{
-    height: 100vh;
+    height: 95vh;
+    width: auto;
     background-color: rgb(224, 224, 224);
-    /* background-image: url(images/library.jpg);
-    background-size:100%; */
-    
-    /* Photo by <a href="https://unsplash.com/@emilwidlund?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Emil Widlund</a> on <a href="https://unsplash.com/photos/photo-of-brown-wooden-bookshelf-xrbbXIXAWY0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> */
 }
-
-/* .body img{
-    max-width: 50%;
-    max-height: auto;
-} */
 
 .header {
     display: flex;
@@ -60,25 +51,27 @@ body{
     border-bottom: 1px solid black;
 }
 
+#booksCount{
+    /* margin-top: 0.25rem; */
+    margin-bottom: 0.75rem;
+    font-weight:  600;
+}
+
 .bookDetails {
     display: flex;
     align-items: flex-start;
     height: 41.5rem;
-    width: 80rem;
+    width: 89rem;
     margin-left: 5rem;
     margin-top: 3rem;
     padding-left: 0.5rem;
 }
 
-#booksCount{
-    font-weight:  600;
-}
-
 .images {
     display: flex;
     height: 41.5rem;
-    width: 40rem;
-    max-width: 40rem;
+    width: 30rem;
+    max-width: 30rem;
 }
 
 .images img{
@@ -127,7 +120,7 @@ td {
 }
 
 button{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     border-radius: 0.5rem;
     padding: 0.5rem;
     margin-top: 1rem;
@@ -136,4 +129,111 @@ button{
 .buttons button:hover{
     background-color: gray;
     color: white;
+}
+
+#addNewBook{
+    /* background-color: rgb(188, 219, 230); */
+    background-color: rgb(114, 204, 200);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);    
+    width: 32rem;
+    height: 50%;
+    margin: 0 auto;
+    border-radius: 1rem;
+}
+
+#editThisBook{
+    /* background-color: rgb(188, 219, 230); */
+    background-color: rgb(236, 178, 70);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);    
+    width: 32rem;
+    height: 45%;
+    margin: 0 auto;
+    border-radius: 1rem;
+}
+
+form {
+  display : block;
+}
+
+form h1{
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+}
+
+form p{
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+}
+
+input{
+    padding: 0;
+    width : 93%;
+    margin-left : 1rem;
+    margin-right : 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+select{
+    padding: 0;
+    width : 93%;
+    margin-left : 1rem;
+    margin-right : 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+#pages{
+    width: 4rem;
+}
+
+#readOrNot{
+    width: 6rem;
+}
+
+#pagesEdit{
+    width: 4rem;
+}
+
+#readOrNotEdit{
+    width: 6rem;
+}
+
+label {
+    font-size: 1.5rem;
+    margin-top : 30px;
+    margin-left : 1rem;
+    margin-bottom: 30px;
+}
+
+input[type="submit"] {
+    width: 5rem;
+    height: 2rem;
+    font-size: 1.25rem;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+}
+
+input[type="submit"]:hover{
+    background-color: gray;
+    color: white;
+}
+
+/* Hide spin buttons on numeric input field in Chrome */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  appearance: none;
+}
+
+/* Hide spin buttons on numeric input field in Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
