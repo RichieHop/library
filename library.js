@@ -104,6 +104,8 @@ function displayBooks() {
         // Display the image and details of the first book in the list
         if (i === 0) {
             displayBookDetail(index)
+            li.style.backgroundColor = "grey";
+            li.style.color = "white";
         }
         li.addEventListener("click", () => {
             displayBookDetail(index)
