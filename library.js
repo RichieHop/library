@@ -14,9 +14,10 @@ const toggleReadButton = document.getElementById("toggleRead");
 var booksCount = document.getElementById("booksCount");
 
 // Book info table cells
-var authorName = document.getElementById("selectedBookDetails").rows[parseInt(0,10)].cells
-var numPages = document.getElementById("selectedBookDetails").rows[parseInt(1,10)].cells
-var readYet = document.getElementById("selectedBookDetails").rows[parseInt(2,10)].cells    
+var bookTitle = document.getElementById("selectedBookDetails").rows[parseInt(0,10)].cells;
+var authorName = document.getElementById("selectedBookDetails").rows[parseInt(1,10)].cells;
+var numPages = document.getElementById("selectedBookDetails").rows[parseInt(2,10)].cells;
+var readYet = document.getElementById("selectedBookDetails").rows[parseInt(3,10)].cells;
 var readCell= document.getElementById("readCell");
 
 // Add a book modal form constants
@@ -79,6 +80,7 @@ function addBookToLibrary(title, author, pages, read, imageURL) {
 // Show the book information
 function displayBookDetail(index) {
     currentIndex = index;
+    bookTitle[parseInt(0,10)].innerHTML = myLibrary[index].title;
     authorName[parseInt(1,10)].innerHTML = myLibrary[index].author;
     numPages[parseInt(1,10)].innerHTML = myLibrary[index].pages;
     if (myLibrary[index].readOrNot === true) {

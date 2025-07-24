@@ -15,8 +15,6 @@
 
 <body>
     
-    <!-- <img src="images/library.jpg" id="bookPicture"> -->
-
     <div class="header">
         <p>Library</p>
     </div>
@@ -29,24 +27,25 @@
         <div class="bookDetails">
             <div class="images">
                 <img src="images/No Image Available.png" id="bookPicture">
-                <!-- <img src="images/Empire.jpg"> -->
-                <!-- <img src="images/Lord Of The Flies.jpg">                  -->
-                <!-- <img src="images/No Image Available.jpeg"> -->
             </div>
             <div class="bookInfo">
                 <table id="selectedBookDetails">
                 <tr>
-                    <th scope="row">Author:</th>
+                    <td colspan="2" class="bookTitle"></td>
+                </tr>
+
+                <tr class="borderRow">
+                    <th  id="width10"scope="row">Author:</th>
                     <td class="authorName"></td>
                 </tr>
 
                 <tr class="borderRow">
-                    <th scope="row">Pages:</th>
+                    <th id="width10"scope="row">Pages:</th>
                     <td class="padding"></td>
                 </tr>
 
                 <tr class="borderRow">
-                    <th scope="row">Read?</th>
+                    <th id="width10" scope="row">Read?</th>
                     <td id="readCell" class="padding"></td>
                 </tr>
                 </table>
@@ -58,7 +57,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
 <dialog id="addNewBook">

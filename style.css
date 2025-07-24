@@ -17,7 +17,7 @@ html{
 
 body{
     height: 95vh;
-    width: auto;
+    width: 100vw;
     background-color: rgb(224, 224, 224);
 }
 
@@ -93,6 +93,17 @@ body{
 
 table {
   border-collapse: collapse;
+}
+
+#width10 {
+    width: 5rem;
+}
+
+.bookTitle {
+    font-size: 1.5rem;
+    padding-left: 0;
+    font-weight: 600;
+    color: brown;
 }
 
 th{
