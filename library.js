@@ -1,6 +1,6 @@
 // Initialise
 let myLibrary = [];
-let list = document.getElementById("bookList");
+const list = document.getElementById("bookList");
 let currentIndex = 0;
 let totalBooks = 0;
 let readText = "";
@@ -11,14 +11,14 @@ const addButton = document.getElementById("add");
 const toggleReadButton = document.getElementById("toggleRead");
 
 // Keep a count of books in the library
-var booksCount = document.getElementById("booksCount");
+const booksCount = document.getElementById("booksCount");
 
 // Book info table cells
-var bookTitle = document.getElementById("selectedBookDetails").rows[parseInt(0,10)].cells;
-var authorName = document.getElementById("selectedBookDetails").rows[parseInt(1,10)].cells;
-var numPages = document.getElementById("selectedBookDetails").rows[parseInt(2,10)].cells;
-var readYet = document.getElementById("selectedBookDetails").rows[parseInt(3,10)].cells;
-var readCell= document.getElementById("readCell");
+const bookTitle = document.getElementById("selectedBookDetails").rows[parseInt(0,10)].cells;
+const authorName = document.getElementById("selectedBookDetails").rows[parseInt(1,10)].cells;
+const numPages = document.getElementById("selectedBookDetails").rows[parseInt(2,10)].cells;
+const readYet = document.getElementById("selectedBookDetails").rows[parseInt(3,10)].cells;
+const readCell= document.getElementById("readCell");
 
 // Add a book modal form constants
 const showBtn = document.getElementById("add");
@@ -57,6 +57,27 @@ addBookToLibrary('Vault: A LitRPG Adventure (Unbound Book 8)', 'Nicoli Gonnella'
 addBookToLibrary('Crown: A LitRPG Adventure (Unbound Book 9)', 'Nicoli Gonnella', 949, true, "images/Crown.jpg");
 addBookToLibrary('Empire: A LitRPG Adventure (Unbound Book 10)', 'Nicoli Gonnella', 752, true, "images/Empire.jpg");
 addBookToLibrary('Chains: A LitRPG Adventure (Unbound Book 11)', 'Nicoli Gonnella', 762, true, "images/Chains.jpg");
+
+// **************************************************************************************************************************
+
+// const libraryJSON = JSON.stringify(myLibrary);
+// console.log(libraryJSON);
+
+// const fs = require("fs");
+
+// // writing the JSON string content to a file
+// fs.writeFile("library.json", libraryJSON, (error) => {
+//   // throwing the error
+//   // in case of a writing problem
+//   if (error) {
+//     // logging the error
+//     console.error(error);
+//     throw error;
+//   }
+//   console.log("library.json written correctly");
+// });
+
+// **************************************************************************************************************************
 
 // Constructor for Book object
 function Book(title, author, pages, readOrNot, imageURL) {
@@ -111,7 +132,7 @@ function displayBooks() {
         }
         li.addEventListener("click", () => {
             displayBookDetail(index)
-            var lists = document.querySelectorAll("li");
+            let lists = document.querySelectorAll("li");
             lists.forEach((li) => li.style.backgroundColor = "transparent");
             lists.forEach((li) => li.style.color = "black");
             // Set selected background to grey.
@@ -125,7 +146,7 @@ function displayBooks() {
 
 // Rebuild the list of books and update the book count after adding or deleting a book
 function redisplayBooks() {
-    var ul = document.getElementById("bookList");
+    const ul = document.getElementById("bookList");
     while(ul.firstChild) ul.removeChild(ul.firstChild);
     displayBooks();
     booksCount.innerHTML = "Total books: " + totalBooks;
@@ -162,7 +183,7 @@ showBtn.addEventListener("click", () => {
 // Close the modal add book form and add a book
 normalCloseBtn.addEventListener("click", (e) => {
     // Check if book title and author alrady exist
-    var result = myLibrary.filter(function(v, i) {
+    let result = myLibrary.filter(function(v, i) {
         return ((v["title"] === titleValue.value) && v.author === authorValue.value);
     })
     if (result.length > 0) {
@@ -170,6 +191,11 @@ normalCloseBtn.addEventListener("click", (e) => {
         e.preventDefault();
         return false;
     };
+    if (titleValue.value === "" || authorValue.value === "") {
+        alert("You have to enter a book and author");
+        e.preventDefault();
+        return false;
+    };    
     // Set imageURL to "No Image Available.jpeg" if it's blank
     if (imageURLValue.value === "") {
         imageURLValue.value = "images/No Image Available.png";
@@ -178,7 +204,7 @@ normalCloseBtn.addEventListener("click", (e) => {
     if (readOrNotValue.value === "True") {
         var readOrNot = true;
     } else {
-        var readOrNot = false;
+        readOrNot = false;
     }
     addBookToLibrary(titleValue.value, authorValue.value, pagesValue.value, readOrNot, imageURLValue.value);
     redisplayBooks();
@@ -207,6 +233,11 @@ showEditBtn.addEventListener("click", (e) => {
 
 // Close the modal edit book form
 normalCloseEditBtn.addEventListener("click", (e) => {
+    if (document.getElementById("titleEdit").value === "" || document.getElementById("authorEdit").value === "") {
+        alert("You have to enter a book and author");
+        e.preventDefault();
+        return false;
+    };      
     // Set imageURL to "No Image Available.jpeg" if it's blank
     if (imageURLValue.value === "") {
         imageURLValue.value = "images/No Image Available.png";
