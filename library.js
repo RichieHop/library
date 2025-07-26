@@ -166,11 +166,18 @@ toggleReadButton.addEventListener("click", () => {
 })    
 
 // Remove a book from the library
-deleteButton.addEventListener("click", () => {
-    if (confirm("Are you sure you want to delete this book?")) {
-        myLibrary.splice(currentIndex, 1);
-        redisplayBooks();
-    } 
+    deleteButton.addEventListener("click", () => {
+    const confirmDeleteDialog = document.getElementById('confirm-delete-dialog')
+    confirmDeleteDialog.showModal()
+    confirmDeleteDialog.addEventListener('click', (event) => {
+        let element = event.target;
+        console.log(`Clicked button: ${element.textContent}`);
+        console.log(this.id);
+        if (element.textContent === "Yes") {
+            myLibrary.splice(currentIndex, 1)
+            redisplayBooks()
+        }
+    }, { once: true })
 })
 
 // Show the modal add book form
