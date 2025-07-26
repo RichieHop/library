@@ -183,6 +183,34 @@ button{
     font-size: 1.2rem;
 }
 
+#book-exists-dialog{
+    background-color: lightgrey;
+    position: absolute;
+    left: 71%;
+    top: 32%;
+    transform: translate(-50%, -50%);    
+    width: 40rem;
+    height: 20%;
+    margin: 0 auto;
+    border: 1px solid red;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+}
+
+#book-tile-and-author-dialog{
+    background-color: lightgrey;
+    position: absolute;
+    left: 71%;
+    top: 32%;
+    transform: translate(-50%, -50%);    
+    width: 40rem;
+    height: 20%;
+    margin: 0 auto;
+    border: 1px solid red;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+}
+
 .modalButtons {
     display:flex;
     justify-content:center;

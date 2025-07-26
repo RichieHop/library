@@ -171,8 +171,8 @@ toggleReadButton.addEventListener("click", () => {
     confirmDeleteDialog.showModal()
     confirmDeleteDialog.addEventListener('click', (event) => {
         let element = event.target;
-        console.log(`Clicked button: ${element.textContent}`);
-        console.log(this.id);
+        // console.log(`Clicked button: ${element.textContent}`);
+        // console.log(this.id);
         if (element.textContent === "Yes") {
             myLibrary.splice(currentIndex, 1)
             redisplayBooks()
@@ -194,15 +194,22 @@ normalCloseBtn.addEventListener("click", (e) => {
         return ((v["title"] === titleValue.value) && v.author === authorValue.value);
     })
     if (result.length > 0) {
-        alert("This book and author already exist in your library");
+        const bookExistsDialog = document.getElementById('book-exists-dialog')
+        bookExistsDialog.showModal()
+        bookExistsDialog.addEventListener('click', (event) => {
+        }, { once: true })
         e.preventDefault();
         return false;
     };
+    // Check if book title and author have a value
     if (titleValue.value === "" || authorValue.value === "") {
-        alert("You have to enter a book and author");
+        const bookTitleAndAuthorDialog = document.getElementById('book-tile-and-author-dialog')
+        bookTitleAndAuthorDialog.showModal()
+        bookTitleAndAuthorDialog.addEventListener('click', (event) => {
+        }, { once: true })
         e.preventDefault();
         return false;
-    };    
+    };
     // Set imageURL to "No Image Available.jpeg" if it's blank
     if (imageURLValue.value === "") {
         imageURLValue.value = "images/No Image Available.png";
@@ -240,11 +247,27 @@ showEditBtn.addEventListener("click", (e) => {
 
 // Close the modal edit book form
 normalCloseEditBtn.addEventListener("click", (e) => {
-    if (document.getElementById("titleEdit").value === "" || document.getElementById("authorEdit").value === "") {
-        alert("You have to enter a book and author");
+    // Check if book title and author alrady exist
+    let result = myLibrary.filter(function(v, i) {
+        return ((v["title"] === document.getElementById("titleEdit").value) && v.author === document.getElementById("authorEdit").value);
+    })
+    if (result.length > 0) {
+        const bookExistsDialog = document.getElementById('book-exists-dialog')
+        bookExistsDialog.showModal()
+        bookExistsDialog.addEventListener('click', (event) => {
+        }, { once: true })
         e.preventDefault();
         return false;
-    };      
+    };
+    // Check if book title and author have a value
+    if (document.getElementById("titleEdit").value === "" || document.getElementById("authorEdit").value === "") {
+        const bookTitleAndAuthorDialog = document.getElementById('book-tile-and-author-dialog')
+        bookTitleAndAuthorDialog.showModal()
+        bookTitleAndAuthorDialog.addEventListener('click', (event) => {
+        }, { once: true })
+        e.preventDefault();
+        return false;
+    };    
     // Set imageURL to "No Image Available.jpeg" if it's blank
     if (imageURLValue.value === "") {
         imageURLValue.value = "images/No Image Available.png";
